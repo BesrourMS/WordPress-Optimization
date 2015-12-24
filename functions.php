@@ -27,4 +27,13 @@ function whtop_setup()
 }
 add_action( 'after_setup_theme', 'whtop_setup' );
 
+//Remove CSS & JS Version
+function remove_cssjs_ver( $src ) {
+ if( strpos( $src, '?ver=' ) || strpos( $src, '&ver=' ))
+ $src = remove_query_arg( 'ver', $src );
+ return $src;
+ 
+}
+add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 ?>
