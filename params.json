@@ -1,0 +1,6 @@
+{
+  "name": "Wordpress-optimization",
+  "tagline": "Plugin to optimize Wordpress header",
+  "body": "# WordPress-Optimization\r\nWordPress Optimization is a plugin for optimizing Wordpress header\r\n\r\n##Instalattion\r\nUpload wordpress-optimization.php into plugins folder then activate it from the dashboard, That's it.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
