@@ -1,4 +1,12 @@
 <?php
+/**
+ * Plugin Name: Wordpress Optimization
+ * Plugin URI: https://github.com/BesrourMS/WordPress-Optimization
+ * Description: Optimize Wordpress Header 
+ * Version: 1.0
+ * Author: Mohamed Safouan Besrour
+ * Author URI: http://besrourms.github.io/
+ */
 //Wordpress Header Optimization
 function whtop_setup()
 {
@@ -12,7 +20,6 @@ function whtop_setup()
     remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
     remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-
    
     remove_action( 'rss2_head', 'the_generator' );
     remove_action( 'rss_head',  'the_generator' );
@@ -33,10 +40,7 @@ function remove_cssjs_ver( $src ) {
  $src = remove_query_arg( 'ver', $src );
  return $src;
 }
-
 add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
 add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
-
 add_filter('json_enabled', '__return_false');
-add_filter('json_jsonp_enabled', '__return_false')
-?>
+add_filter('json_jsonp_enabled', '__return_false');
